@@ -1,23 +1,29 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence } from 'firebase/firestore';
+import { getFirestore, collection } from 'firebase/firestore';
 import { 
   getAuth, 
   onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut,
-  Auth
+  signOut
 } from "firebase/auth";
 import { getStorage } from 'firebase/storage';
-import '@react-native-async-storage/async-storage'; 
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  FIREBASE_MESSAGING_SENDER_ID,
+  FIREBASE_APP_ID
+} from '@env';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBxEcjIBTfKfX6CPo6Axg8-AGOsGYFHcPo",
-  authDomain: "chatapp-277d7.firebaseapp.com",
-  projectId: "chatapp-277d7",
-  storageBucket: "chatapp-277d7.firebasestorage.app",
-  messagingSenderId: "502285787428",
-  appId: "1:502285787428:android:28b060ccccff04e33993b1"
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
